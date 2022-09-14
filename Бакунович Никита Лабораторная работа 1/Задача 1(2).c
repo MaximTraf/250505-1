@@ -1,5 +1,5 @@
 ﻿#include <stdio.h>
-int main(void)
+int main()
 {
 	float a, S, V;
 	a = 0; //переменная длины ребра
