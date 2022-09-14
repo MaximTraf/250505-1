@@ -1,0 +1,224 @@
+Лаба 1 Номер 1
+
+#include "stdio.h"
+int main()
+{
+	int r;
+	double S, V;
+	const double pi = 3.14;
+
+	printf("Enter the radius of the sphere:\n ");
+
+
+	while (scanf_s("%d", &r) != 1)//Если будет введена буква, выдаст ошибку
+	{
+		printf("Wrong imput. Try again\n");
+		rewind(stdin);
+	}
+
+	S = 4 * pi * r * r;
+	V = (4 * pi * r * r * r) / 3;
+
+	printf("The surface area of the sphere = %.2f\nThe volume of the sphere = %.2f\n", S, V);// %.2f   f показывает что число дробное, а 2 это количество цифр после запятой// 
+	return 0;
+}
+
+
+
+Лаба 1Номер 2
+
+#include "stdio.h"
+int main()
+{
+	int k;
+
+	printf("Enter a number\n ");
+	//scanf_s("%d", &k);
+
+	while (scanf_s("%d", &k) != 1)//Если будет введена буква, выдаст ошибку
+	{
+		printf("Wrong imput. Try again\n");
+		rewind(stdin);
+	}
+
+
+	if (k % 2 == 0) printf("k - chetnoe\n");
+	else printf("k - nechetnoe\n");
+
+	getchar();
+}
+
+
+Лаба 1 Номер 3
+
+
+#include "stdio.h"
+
+int func(float a, float b) {
+	return a * b == 1.0f;//a * b = 1, то числа взаимно обратные. f сокращение от float//
+}
+int main()
+{
+	float a, b, c;//числа могут быть дробными//
+	int cnt;
+
+	printf("numbers (a, b, c): \n ");
+	scanf_s("%f %f %f", &a, &b, &c);
+
+
+	cnt = func(a, b) + func(a, c) + func(b, c);
+	printf("result = %d\n", cnt);
+	return 0;
+}
+
+
+Лаба 1 Номер 4
+
+
+
+#include "stdio.h"
+int main()
+{
+	int a;
+	printf("1 - summer\n2 - autumn\n3 - winter\n4 - spring\n");// присваиваем каждому месяцу цифру для более удобного ввода//
+	printf("Enter the time of year:");
+	//scanf_s("%d", &a);
+
+	while (scanf_s("%d", &a) != 1)//Если будет введена буква, выдаст ошибку
+	{
+		printf("Wrong imput. Try again\n");
+		rewind(stdin);
+	}
+
+
+	switch (a) //сравнивает значение с несколькими константами, может содержат неограниченное число case//
+	{
+	case 1:// если введена цифра 1, то будут выведены месяца поры года под номером 1//
+		printf("June, July, August\n");
+		break;
+	case 2:
+		printf("September, October, November\n");
+		break;
+	case 3:
+		printf("December, January, February\n");
+		break;
+	case 4:
+		printf("March, April, May\n");
+		break;
+	default: printf("Mistake\n");//Если введена цифра, которой не присвоено время года выписывается ошибка//
+		return 0;
+	}
+}
+
+
+Лаба 2 номер 1
+
+
+
+#include "stdio.h"
+int main()
+{
+	int c, y;
+	float m;
+
+	printf("Current year:\n ");
+	//scanf_s("%d", &c);
+
+	while (scanf_s("%d", &c) != 1)//Если будет введена буква, выдаст ошибку
+	{
+		printf("Wrong imput. Try again\n");
+		rewind(stdin);
+	}
+	printf("Year of purchase:\n ");
+	//scanf_s("%d", &y);
+
+	while (scanf_s("%d", &y) != 1)//Если будет введена буква, выдаст ошибку
+	{
+		printf("Wrong imput. Try again\n");
+		rewind(stdin);
+	}
+
+	printf("original price:\n ");
+	//scanf_s("%f", &m);
+
+	
+	while (scanf_s("%f", &m) != 1)//Если будет введена буква, выдаст ошибку
+	{
+		printf("Wrong imput. Try again\n");
+		rewind(stdin);
+	}
+
+	while (c > y)
+	{
+		//printf("Year %d\n", y);//
+		y = y + 1;// прибавляем к изначальному году по одному, пока не дойдем до декущего//
+		//printf("The price is: %.2f\n", m);//
+		m = m + (m * 0.04);
+	}
+
+	printf("Today, in %d, the cost would be %.2f dollars\n", y, m);
+	return 0;
+}
+
+Лаба 2 номер 2
+
+
+#include "stdio.h"
+
+int main()
+{
+	int T = 0, a = 0, b = 0, c = 0, d = 0, R = 100;
+	for (a = 0; a <= 2; a++) {// для  записи for действует правило (Инициализация; Условие; Модификация)//
+		for (b = 0; b <= 5; b++) {
+			for (c = 0; c <= 20; c++) {
+				for (d = 0; d <= 50; d++) {
+					if (R == (a * 50 + b * 20 + c * 5 + d * 2))
+						T++;//Что бы сумма копеек была 100,  монет по 50 должно быть не больше 2, 20 не больше 5 и так далее//
+				}
+			}
+		}
+	}
+	printf("Methods of recruitment - %d\n", T);
+	getchar();
+}
+
+
+Лаба 2 номер 3
+
+
+#include "stdio.h"
+
+int main()
+{
+	int a, b, k = 0;
+	
+	printf("Enter A:\n");
+	//scanf_s("%d", &a);
+
+	while (scanf_s("%d", &a) != 1)//Если будет введена буква, выдаст ошибку
+	{
+		printf("Wrong imput. Try again\n");
+		rewind(stdin);
+	}
+
+
+	printf("Enter B:\n");
+	//scanf_s("%d", &b);
+
+	while (scanf_s("%d", &b) != 1)//Если будет введена буква, выдаст ошибку
+	{
+		printf("Wrong imput. Try again\n");
+		rewind(stdin);
+	}
+
+
+
+	while (a >= b) {
+		a = a - b;// от большей части отнимаем меньшую и каждый раз прибавляем к колтчеству 1 пока место на большем отрезке не закончится//
+		k = k + 1;
+	}
+	if (a < b) {
+		printf("Number of segments B on segment A - %d\n", k);
+	}
+	return(0);
+}
