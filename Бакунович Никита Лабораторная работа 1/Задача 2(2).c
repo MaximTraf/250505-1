@@ -1,5 +1,5 @@
 ﻿#include <stdio.h>
-int main(void)
+int main()
 {
 	float x, y, C, R;
 	x, y, C = 0;
